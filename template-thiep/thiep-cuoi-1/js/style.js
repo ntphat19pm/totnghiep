@@ -1,0 +1,178 @@
+$('.autoplay').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    dot: false,
+    autoplaySpeed: 3000,
+    prevArrow: '<div class="slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
+      nextArrow: '<div class="slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>'
+  });
+  
+  $(".option-1boxp").on('click',function(){
+      $('.element-hide-rap').css('display','block');
+      if(!$(this).hasClass('activep')){
+          $(this).addClass('activep');
+          $(".option-2boxp").removeClass('activep');
+          $(".option-3boxp").removeClass('activep');
+      }
+  })
+  
+  $(".option-2boxp").on('click',function(){
+      $('.element-hide-rap').css('display','none');
+      if(!$(this).hasClass('activep')){
+          $(this).addClass('activep');
+          $(".option-1boxp").removeClass('activep');
+          $(".option-3boxp").removeClass('activep');
+      }
+  })
+  
+  $(".option-3boxp").on('click',function(){
+      $('.element-hide-rap').css('display','none');
+      if(!$(this).hasClass('activep')){
+          $(this).addClass('activep');
+          $(".option-1boxp").removeClass('activep');
+          $(".option-2boxp").removeClass('activep');
+      }
+  });
+  
+  $(".option-1").on('click',function(){
+      if(!$(this).hasClass('activep')){
+          $(this).addClass('activep');
+          $(".option-2").removeClass('activep');
+      }
+  })
+  
+  $(".option-2").on('click',function(){
+      if(!$(this).hasClass('activep')){
+          $(this).addClass('activep');
+          $(".option-1").removeClass('activep');
+      }
+  })
+  
+  
+  
+    $('.gf_button').on('click',function(){
+          // check cookie
+          // let check_alert = checkCookie();
+          // if(check_alert == 1){
+          //   alert("Thông tin của bạn đã được gửi đi! Vui lòng thử lại sau 5 phút");
+          //   return false;
+          // }
+          let val_EM = $(this).attr('data-email');
+          let val_E = $('.gf_textfield').val();
+          let val_num = $('select[name="thamdusonguoi"]').val();
+          let val_friend = 1;
+          let val_in = 1;
+          let val_pt = $('select[name="select_pt_pt"]').val();
+          // get check friend
+          if($(".option-2").hasClass('activep')){
+              val_friend = 2;
+          }
+          if($(".option-2boxp").hasClass('activep')){
+              val_in = 2;
+              val_num = 0;
+              val_pt = 0;
+          }
+          if($(".option-3boxp").hasClass('activep')){
+              val_in = 3;
+              val_num = 0;
+              val_pt = 0;
+          }
+          if(empty(val_E)){
+              let alert_pls_name = $('#main-page').attr('alert_pls_name');
+              alert(alert_pls_name);
+              return false;
+          }
+  
+          let d = new Date();
+  
+          let day = d.getDate();
+          let month = d.getMonth() + 1;
+          if(parseInt(day) < 10){
+            day = "0" + parseInt(day);
+          }
+  
+          if(parseInt(month) < 10){
+            month = "0" + parseInt(month);
+          }
+  
+          let current_time = d.getHours()+"h"+d.getMinutes()+" - "+day+"/"+ month +"/"+d.getFullYear();
+  
+          let form_data = {
+              email: val_EM,
+              name: val_E,
+              number: val_num,
+              friend: val_friend,
+              friend_in : val_in,
+              val_pt : val_pt,
+              currunt_href: window.location.href,
+              current_time: current_time,
+          };
+          $('.gf_button').attr('disabled','disabled');
+          let text_alert = $('#main-page').attr('text_alert_rsvp');
+          alert(text_alert);
+          $.ajax({
+              type: "GET",
+              url: $(".rsvp-data").attr('data-link'),
+              data: form_data,
+              dataType: 'json',
+              success: function (response) {
+                setCookie('alert_time',1,5);
+              }
+          });
+        
+    });
+  
+    $('.gla_music_icon').on('click',function(){
+              $('.gla_music_icon_cont').fadeToggle(); 
+          }); 
+  
+    $('.addevent').addToCalendar({
+            filename: 'myicalendar',
+            target: '_blank',
+            providers: {
+                google: 'Google Calendar',
+                other: 'Other Calendar'
+            }
+          });
+  
+  
+  function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ", " + expires;
+  }
+  
+  
+  function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length,c.length);
+          }
+      }
+      return "";
+  }
+  
+  function checkCookie() {
+      let username=getCookie("alert_time");
+      let return_check = 0;
+      if (username!="") {
+          return_check = 1;
+      }
+      return return_check;
+  }
+  
+  function empty(str)
+  {
+      if (typeof str == 'undefined' || !str || str.length === 0 || str === "" || !/[^\s]/.test(str) || /^\s*$/.test(str) || str.replace(/\s/g,"") === "")
+          return true;
+      else
+          return false;
+  }
