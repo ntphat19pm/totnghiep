@@ -60,54 +60,6 @@
           resize: none;
         }
     </style>
-
-    <style>
-        .loader-wrapper{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #242f3f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.loader {
-  position: relative;
-  width: 40px;
-  height: 60px;
-  animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.loader:before,
-.loader:after {
-  content: "";
-  background: #ff3d00 ;
-  width: 40px;
-  height: 60px;
-  border-radius: 50px 50px 0 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: rotate(45deg);
-  transform-origin: 50% 68%;
-  box-shadow: 5px 4px 5px #0004 inset;
-}
-.loader:after {
-  transform: rotate(-45deg);
-}
-@keyframes heartBeat {
-  0% { transform: scale(0.95) }
-  5% { transform: scale(1.1) }
-  39% { transform: scale(0.85) }
-  45% { transform: scale(1) }
-  60% { transform: scale(0.95) }
-  100% { transform: scale(0.9) }
-}
-      
-  
-    </style>
     <link rel="stylesheet" type="text/css" href="template-thiep/thiep-cuoi-1/css/style.css">
 </head>
 <body>
@@ -118,12 +70,7 @@
             </audio>
         </div>
     </div> -->
-    <div id="preloader">
-        <div class="loader-wrapper">
-        <div class="loader"></div>
-        </div>
-    </div>
-    <div class="main-page" id="main-page" text_alert_rsvp="Xin cảm ơn phản hồi của bạn!" alert_pls_name="Vui lòng nhập Tên!">
+    <div id="main-page" text_alert_rsvp="Xin cảm ơn phản hồi của bạn!" alert_pls_name="Vui lòng nhập Tên!">
     <div class="box-tsimple-online">
                  <div class="cover">
                 <img src="./uploads/contact/graduation.gif">
@@ -355,6 +302,7 @@
            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15676.43771195248!2d106.6915143!3d10.8029303!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x27ff481ab0bd888f!2zVHJ1bmcgdMOibSBo4buZaSBuZ2jhu4sgdGnhu4djIGPGsOG7m2kgQXNpYW5hIFBsYXphIChCw6xuaCBUaOG6oW5oKQ!5e0!3m2!1svi!2s!4v1661500016360!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5630.990029976905!2d105.42907110327079!3d10.37173629788155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a731e7546fd7b%3A0x953539cd7673d9e5!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBBbiBHaWFuZyAtIMSQSFFHIFRQSENN!5e0!3m2!1svi!2s!4v1663751262070!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+
                 <div class="mt-80">
             <h3 class="text-center">Thông tin liên hệ</h3>
         </div>
@@ -363,27 +311,41 @@
                 <img  width="30px" src="./uploads/contact/tanphat1.png" alt="">
             </div>
             <br>
+            
+
+            
+
+            
+
             <div class="col-xs-4">
                                  <!-- <a href="tel:0902595993"><img src="./uploads/contact/6308833e4177d-Footer_02.jpg" alt=""></a> -->
                             </div>
+            
              <div class="col-xs-4">
                                   <a href="tel:0917663865"><img src="./uploads/contact/call.png" alt=""></a>
                             </div>
+
             <div class="col-xs-4">
                                 <!-- <a href="tel:0903696946"><img src="./uploads/contact/6308833e416cd-Footer_03.jpg" alt=""></a> -->
                           </div>
+
+            
                         <div class="clearfix"></div>
         </div>
 
         <div class="mt-80">
             <h3 class="text-center">Cám ơn bạn !</h3>
-        </div> 
+        </div>
+
+        
         <!-- <div class="text-center mrt20">
             <div data-label="Social Share" data-key="social-share" data-atomgroup="module" id="m-1639535856637" class="module-wrap" data-icon="eicon-social-icons" data-ver="1.0" data-id="1639535856637">
                 <div class="module gf_module-center gf_module-center-lg gf_module--md gf_module--sm gf_module--xs " data-modelink="auto" data-editlink="" data-btnlabel="cta" data-sharein=""><a href="#" title="facebook" data-sharetext="Share" data-sharein="popup" class="gf_social gf_social-facebook" style="width: ; height: 40px; font-size: 14px; margin-right: 5px; background: #3B5998ff">
                     <i class="fa fa-facebook" aria-hidden="true" style="color: #ffffffff;"></i>
                     <span class="gf_social-label">Share</span></a><a href="#" title="twitter" data-sharetext="Tweet" data-sharein="popup" class="gf_social gf_social-twitter" style="width: ; height: 40px; font-size: 14px; margin-right: 5px; background: #55aceeff"><i class="fa fa-twitter" aria-hidden="true" style="color: #ffffffff;"></i><span class="gf_social-label">Tweet</span></a><a href="#" title="pinterest" data-sharetext="Pin it" data-sharein="popup" class="gf_social gf_social-pinterest" style="width: ; height: 40px; font-size: 14px; margin-right: 5px; background: #CB2027ff"><i class="fa fa-pinterest" aria-hidden="true" style="color: #ffffffff;"></i><span class="gf_social-label">Pin it</span></a><a href="#" title="email" data-sharetext="E-mail" data-sharein="self" class="gf_social gf_social-email" style="width: ; height: 40px; font-size: 14px; margin-right: 5px; background: #7d7d7dff"><i class="fa fa-envelope-o" aria-hidden="true" style="color: #ffffffff;"></i><span class="gf_social-label">E-mail</span></a></div></div>
         </div> -->
+
+
                 <div class="mt-80">
             <a href="https://thesimple.vn/" target="_blank">
             <img src="./uploads/contact/footer.png" alt="">
@@ -391,6 +353,8 @@
         </div>
               
     </div>
+
+    
     <div class="module gf_module- gf_module--lg gf_module--md gf_module--sm gf_module--xs ">
         <div class="gla_music_icon">
             <button class="btn-musicf">
@@ -406,16 +370,38 @@
             <!-- End - music -->
         </div>
     </div>
+
+    
+
+    
     <div class="module gf_module- gf_module--lg gf_module--md gf_module--sm gf_module--xs ">
         <div class="gla_music_icon2">
             <!-- <button class="btn-musicf2">
-                <a href="https://app.thesimple.vn/minhkhoa-thuychau?lang=en" ><img src="template-thiep/thiep-cuoi-1/images/en.png"></a>
+                                <a href="https://app.thesimple.vn/minhkhoa-thuychau?lang=en" ><img src="template-thiep/thiep-cuoi-1/images/en.png"></a>
+                
+                
+
             </button> -->
         </div>
+       
     </div>
+
+    
+
+
+
+    
     <div class="rsvp-data" data-link=""></div>
         <div class="countdown-time" data-time="December 04, 2022 11:00" ></div>
-    </div>
+     
+
+    <!-- /app/public/thiep-cuoi-1/css -->
+<!-- /app/public/thiep-cuoi-1/js -->
+<!-- /app/public/thiep-cuoi-1/image -->
+
+    
+
+</div>
 <script src="./tem_front/assets/teamplates/js/jquery.js"></script>
 <script src="./tem_front/assets/teamplates/js/bootstrap.min.js"></script>
 <script src="./tem_front/assets/teamplates/js/wow.js"></script>
@@ -428,15 +414,6 @@
 
 <script src="./tem_front/assets/teamplates/js/script.js"></script>
 
-<script>
-    var loader=document.getElementById("preloader");
-    window.addEventListener("load",function(){
-        loader.style.display="none";
-    })
-    // setTimeout(()=>{
-    //     document.getElementsByClassName('main-page')[0].classList.remove('loader');
-    // },5000);
-</script>
 
     
 
